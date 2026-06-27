@@ -1,0 +1,8 @@
+{
+  "name": "futureme-root",
+  "version": "1.0.0",
+  "description": "FutureMe root workspace for Netlify deployment",
+  "dependencies": {
+    "@google/generative-ai": "^0.13.0"
+  }
+}

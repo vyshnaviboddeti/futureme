@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Me — Meet The Person You're Becoming</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="ambient-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                Future Me
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="#">Home</a></li>
+                <li class="nav-item"><a href="#features">Features</a></li>
+                <li class="nav-item"><a href="#app">Future Self</a></li>
+                <li class="nav-item"><a href="#dashboard">Dashboard</a></li>
+                <li class="nav-item"><a href="#chat">AI Mentor</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-signin">Sign In</button>
+                <button class="btn-primary btn-nav-cta" onclick="document.getElementById('app').scrollIntoView();">Get Started</button>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content reveal">
+            <h1 class="hero-title">Meet The Person You're Becoming.</h1>
+            <p class="hero-subtitle">Future Me uses AI to understand where you are today and guide you toward the life you want tomorrow.</p>
+            <div class="hero-buttons">
+                <a href="#app" class="btn-primary">Start Building My Future</a>
+                <button class="btn-secondary" onclick="document.getElementById('features').scrollIntoView();">Watch Demo</button>
+            </div>
+        </div>
+        <div class="mockup-container reveal">
+            <div class="glass-panel dashboard-mockup">
+                <div class="widget">
+                    <span class="widget-title">Future Score</span>
+                    <span class="widget-value">94%</span>
+                </div>
+                <div class="widget">
+                    <span class="widget-title">Timeline Velocity</span>
+                    <div class="ring-container">
+                        <svg class="progress-ring">
+                            <circle class="track" cx="32" cy="32" r="28"/>
+                            <circle class="fill" cx="32" cy="32" r="28"/>
+                        </svg>
+                        <span style="font-weight:600;">Optimal</span>
+                    </div>
+                </div>
+                <div class="widget" style="grid-column: span 2;">
+                    <span class="widget-title">Active AI Clarity Vector</span>
+                    <span style="font-size:15px; color:var(--text-secondary); line-height:1.4; margin-top:4px;">"Strategic refinement required in Habit Architecture over the next 14 business cycles."</span>
+                </div>
+            </div>
+            <div class="glass-panel floating-card fc-1">
+                <span class="widget-title" style="color:var(--accent-cyan)">Upcoming Target</span>
+                <p style="font-size:14px; font-weight:500; margin-top:4px;">Architect Phase Complete</p>
+            </div>
+            <div class="glass-panel floating-card fc-2">
+                <span class="widget-title" style="color:var(--accent-purple)">Identity Engine</span>
+                <p style="font-size:14px; font-weight:500; margin-top:4px;">Syncing Future Iteration...</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="features" id="features">
+        <div class="section-header reveal">
+            <h2 class="section-title">Why Future Me?</h2>
+            <p class="section-subtitle">A synthesis of temporal psychology and advanced artificial modeling.</p>
+        </div>
+        <div class="features-grid">
+            <div class="glass-panel feature-card reveal">
+                <div class="feature-icon">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24"/></svg>
+                </div>
+                <h3>Goal Clarity</h3>
+                <p>Define exactly who you want to become with precise high-fidelity visualization mapping blueprints.</p>
+            </div>
+            <div class="glass-panel feature-card reveal">
+                <div class="feature-icon">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0 1 7.54 16.59c-.44.55-.32 1.34.24 1.78l1.06.84c.55.44.64 1.24.2 1.79l-.3.37c-.44.55-1.24.64-1.79.2l-1.06-.84c-.56-.44-1.35-.32-1.79.24A10 10 0 1 1 12 2Z"/></svg>
+                </div>
+                <h3>AI Mentor</h3>
+                <p>Receive live contextually calculated advice from an architectural simulated node of your future self.</p>
+            </div>
+            <div class="glass-panel feature-card reveal">
+                <div class="feature-icon">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 3h16a1 1 0 0 1 1 1 v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M16 2v2M8 2v2M3 8h18"/></svg>
+                </div>
+                <h3>Smart Roadmaps</h3>
+                <p>Break macro existential trajectories into actionable micro vectors assigned perfectly day over day.</p>
+            </div>
+            <div class="glass-panel feature-card reveal">
+                <div class="feature-icon">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
+                </div>
+                <h3>Progress Tracking</h3>
+                <p>Visualize structural psychological and objective goal growth trends via comprehensive real-time dashboards.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="app-section" id="app">
+        <div class="section-header reveal" style="text-align: center;">
+            <h2 class="section-title">Talk To Your Future Self</h2>
+            <p class="section-subtitle">Describe where you are today and discover who you can become.</p>
+        </div>
+        <div class="glass-panel app-container reveal">
+            <form class="app-form" id="identityForm" onsubmit="generateIdentity(event)">
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="userName">YOUR NAME</label>
+                        <input type="text" id="userName" placeholder="Alex Mercer" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userAge">CURRENT AGE</label>
+                        <input type="number" id="userAge" placeholder="26" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="userDream">WHAT IS YOUR BIGGEST DREAM?</label>
+                    <input type="text" id="userDream" placeholder="Found a sustainable deep-tech robotics collective" required>
+                </div>
+                <div class="form-group">
+                    <label for="userStruggle">WHAT ARE YOU STRUGGLING WITH RIGHT NOW?</label>
+                    <textarea id="userStruggle" rows="3" placeholder="Paralysis by analysis and systemic morning time allocation optimization" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="userTarget">WHERE DO YOU WANT TO BE IN ONE YEAR?</label>
+                    <input type="text" id="userTarget" placeholder="Operating with $500k seed validation and absolute physical freedom" required>
+                </div>
+                <div class="form-group">
+                    <label>CHOOSE YOUR FUTURE ME PERSONALITY</label>
+                    <div class="personality-selector">
+                        <div class="personality-option active" data-tone="Motivational" onclick="setPersonality(this, 'Motivational')">Motivational</div>
+                        <div class="personality-option" data-tone="Brutally Honest" onclick="setPersonality(this, 'Brutally Honest')">Brutally Honest</div>
+                        <div class="personality-option" data-tone="Calm Mentor" onclick="setPersonality(this, 'Calm Mentor')">Calm Mentor</div>
+                        <div class="personality-option" data-tone="CEO Mode" onclick="setPersonality(this, 'CEO Mode')">CEO Mode</div>
+                    </div>
+                    <input type="hidden" id="selectedPersonality" value="Motivational">
+                </div>
+                <div class="btn-submit-container">
+                    <button type="submit" class="btn-primary btn-generate" id="btnSubmitForm">Generate My Future Identity</button>
+                </div>
+            </form>
+
+            <div class="loader-container" id="appLoader">
+                <div class="spinner"></div>
+                <p style="color: var(--text-secondary); font-weight: 500;" id="loaderText">Creating your future identity...</p>
+                <div class="progress-bar-wrapper">
+                    <div class="progress-bar-fill" id="appProgressBar"></div>
+                </div>
+            </div>
+
+            <div class="result-container" id="appResult">
+                <div class="result-header">
+                    <span class="widget-title" style="color:var(--accent-purple)">TRANSMISSION ACTIVE</span>
+                    <h3 style="font-size:28px; font-weight:700; margin-top:4px;">Message From Your Future Self</h3>
+                </div>
+                
+                <div class="form-group">
+                    <label>YOUR FUTURE IDENTITY</label>
+                    <div style="font-size: 20px; font-weight: 600; color: var(--accent-cyan); margin-bottom: 8px;" id="resIdentityTitle"></div>
+                    <div class="identity-msg" id="resMsg"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>YOUR NEXT THREE MOVES</label>
+                    <div class="moves-grid">
+                        <div class="move-card">
+                            <span class="move-num">Move 01</span>
+                            <p id="resMove1" style="font-weight: 500; font-size:15px;"></p>
+                        </div>
+                        <div class="move-card">
+                            <span class="move-num">Move 02</span>
+                            <p id="resMove2" style="font-weight: 500; font-size:15px;"></p>
+                        </div>
+                        <div class="move-card">
+                            <span class="move-num">Move 03</span>
+                            <p id="resMove3" style="font-weight: 500; font-size:15px;"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>ONE HABIT TO START TODAY</label>
+                    <div class="habit-card">
+                        <div class="feature-icon" style="color:var(--accent-cyan); background:rgba(255,255,255,0.02);"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></div>
+                        <div>
+                            <h4 style="font-size:16px; font-weight:600;" id="resHabitTitle">Daily Atomic Habit</h4>
+                            <p style="color:var(--text-secondary); font-size:14px; margin-top:2px;" id="resHabitDesc"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>FUTURE SELF WARNING</label>
+                    <div class="warning-card">
+                        <div class="feature-icon" style="color:var(--accent-red); background:rgba(255,255,255,0.02);"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="m10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0zM12 9v4M12 17h.01"/></svg></div>
+                        <div>
+                            <h4 style="font-size:16px; font-weight:600; color: #FF8F8F;">Crucial Trajectory Alert</h4>
+                            <p style="color:var(--text-secondary); font-size:14px; margin-top:2px;" id="resWarningDesc"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>DAILY TRAJECTORY MANTRA</label>
+                    <div class="mantra-card" id="resMantra"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>CURRENT YOU → FUTURE YOU</label>
+                    <div class="transformation-preview">
+                        <div class="tf-node">
+                            <h4>Current Iteration</h4>
+                            <p id="resTfCurrent"></p>
+                        </div>
+                        <div class="tf-arrow">➔</div>
+                        <div class="tf-node">
+                            <h4>Target Core</h4>
+                            <p id="resTfFuture" style="color: var(--accent-cyan);"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-actions">
+                    <button class="btn-secondary" onclick="copyResultToClipboard()">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+                        Copy Result
+                    </button>
+                    <button class="btn-secondary" onclick="resetForm()">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                        Regenerate
+                    </button>
+                    <button class="btn-primary" onclick="scrollToChat()">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        Chat with FutureMe
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chat-section" id="chat">
+        <div class="section-header reveal" style="text-align: center;">
+            <h2 class="section-title">Ask Your Future Self Anything</h2>
+            <p class="section-subtitle">A direct diagnostic dynamic interface connecting present reality data points to realized trajectories.</p>
+        </div>
+        <div class="glass-panel chat-panel-container reveal">
+            <div class="chat-window" id="chatWindow">
+                <!-- Initial messages populated in script.js based on user context -->
+            </div>
+            
+            <div class="typing-indicator" id="typingIndicator">
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+            </div>
+
+            <form class="chat-input-bar" id="chatForm" onsubmit="sendChatMessage(event)">
+                <input type="text" id="chatInput" placeholder="Ask your FutureMe anything..." required autocomplete="off">
+                <button type="submit" class="btn-primary btn-send" id="btnSendChat">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="dashboard-section" id="dashboard">
+        <div class="section-header reveal" style="text-align: center;">
+            <h2 class="section-title">Your Growth Dashboard</h2>
+            <p class="section-subtitle">Real-time existential performance indicators tracking metric conversion rates.</p>
+        </div>
+        <div class="dashboard-grid">
+            <div class="glass-panel db-card reveal">
+                <div class="db-header">
+                    <span class="db-title">Timeline Alignment</span>
+                    <svg width="20" height="20" fill="none" stroke="var(--accent-cyan)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                </div>
+                <span class="db-value" id="dbClarity">--%</span>
+                <div class="chart-container">
+                    <div class="chart-bar"><div class="chart-bar-fill" id="bar1" style="height: 0%;"></div></div>
+                    <div class="chart-bar"><div class="chart-bar-fill" id="bar2" style="height: 0%;"></div></div>
+                    <div class="chart-bar"><div class="chart-bar-fill" id="bar3" style="height: 0%;"></div></div>
+                    <div class="chart-bar"><div class="chart-bar-fill" id="bar4" style="height: 0%;"></div></div>
+                    <div class="chart-bar"><div class="chart-bar-fill" id="bar5" style="style: height: 0%;"></div></div>
+                </div>
+            </div>
+            
+            <div class="glass-panel db-card reveal">
+                <div class="db-header">
+                    <span class="db-title">Action Velocity</span>
+                    <svg width="20" height="20" fill="none" stroke="var(--accent-purple)" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                </div>
+                <span class="db-value" id="dbVelocity">Inactive</span>
+                <div class="chart-container">
+                    <div class="chart-bar"><div class="chart-bar-fill" id="velBar1" style="height: 0%;"></div></div>
+                    <div class="chart-bar"><div class="chart-bar-fill" id="velBar2" style="height: 0%;"></div></div>
+                    <div class="chart-bar"><div class="chart-bar-fill" id="velBar3" style="height: 0%;"></div></div>
+                    <div class="chart-bar"><div class="chart-bar-fill" id="velBar4" style="height: 0%;"></div></div>
+                    <div class="chart-bar"><div class="chart-bar-fill" id="velBar5" style="height: 0%;"></div></div>
+                </div>
+            </div>
+
+            <div class="glass-panel db-card reveal">
+                <div class="db-header">
+                    <span class="db-title">Mantra Resonance</span>
+                    <svg width="20" height="20" fill="none" stroke="var(--accent-blue)" stroke-width="2"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/><path d="M12 7v5l3 3"/></svg>
+                </div>
+                <span class="db-value" id="dbResonance">Stable</span>
+                <div class="chart-container">
+                    <div class="chart-bar"><div class="chart-bar-fill" id="resBar1" style="height: 0%;"></div></div>
+                    <div class="chart-bar"><div class="chart-bar-fill" id="resBar2" style="height: 0%;"></div></div>
+                    <div class="chart-bar"><div class="chart-bar-fill" id="resBar3" style="height: 0%;"></div></div>
+                    <div class="chart-bar"><div class="chart-bar-fill" id="resBar4" style="height: 0%;"></div></div>
+                    <div class="chart-bar"><div class="chart-bar-fill" id="resBar5" style="height: 0%;"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="cta">
+        <div class="glass-panel cta-panel reveal">
+            <h2 class="cta-title">Your Future Self is Waiting.</h2>
+            <p class="cta-subtitle">Don't let them down. Every single action you take today creates the version of you that exists tomorrow.</p>
+            <button class="btn-primary" onclick="document.getElementById('app').scrollIntoView();">Connect with FutureMe</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <a href="#" class="logo" style="font-size: 18px; margin-bottom: 8px;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    FutureMe
+                </a>
+                <p style="color: var(--text-tertiary); font-size: 12px; margin-top: 4px;">© 2026 Nitish's Founder Labs. All rights reserved.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#features">Features</a>
+                <a href="#app">Future Self</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast" id="copyToast">Result copied to clipboard.</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

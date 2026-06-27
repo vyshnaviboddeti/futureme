@@ -1,0 +1,12 @@
+[build]
+  publish = "frontend"
+
+[[redirects]]
+  from = "/api/generate-futureme"
+  to = "/.netlify/functions/generate-futureme"
+  status = 200
+
+[[redirects]]
+  from = "/api/chat-futureme"
+  to = "/.netlify/functions/chat-futureme"
+  status = 200
