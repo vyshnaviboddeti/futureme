@@ -76,10 +76,54 @@ Return only valid JSON in this exact format:
   "nextMoves": ["Action 1", "Action 2", "Action 3"],
   "habit": "One small daily habit they should start today.",
   "warning": "One mistake their future self warns them about.",
-  "mantra": "A short memorable line they can repeat daily."
+  "mantra": "A short memorable line they can repeat daily.",
+  "dailyPlan": [
+    {{
+      "day": "Day 1",
+      "focus": "Focus of the day (e.g. Audit & Reset)",
+      "action": "Concrete action step to perform today.",
+      "motivation": "A short motivational boost from the future self in the selected tone."
+    }},
+    {{
+      "day": "Day 2",
+      "focus": "...",
+      "action": "...",
+      "motivation": "..."
+    }},
+    {{
+      "day": "Day 3",
+      "focus": "...",
+      "action": "...",
+      "motivation": "..."
+    }},
+    {{
+      "day": "Day 4",
+      "focus": "...",
+      "action": "...",
+      "motivation": "..."
+    }},
+    {{
+      "day": "Day 5",
+      "focus": "...",
+      "action": "...",
+      "motivation": "..."
+    }},
+    {{
+      "day": "Day 6",
+      "focus": "...",
+      "action": "...",
+      "motivation": "..."
+    }},
+    {{
+      "day": "Day 7",
+      "focus": "...",
+      "action": "...",
+      "motivation": "..."
+    }}
+  ]
 }}
 
-Make it specific. Avoid generic motivation. Avoid clichés. Make it emotional but practical."""
+Make it specific. Avoid generic motivation. Avoid clichés. Make it emotional but practical. Must return exactly 7 days in the dailyPlan array."""
 
         model = genai.GenerativeModel(
             "gemini-flash-latest", 

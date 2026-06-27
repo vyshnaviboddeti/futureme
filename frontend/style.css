@@ -1090,3 +1090,128 @@ body {
     .footer-container { flex-direction: column; gap: 32px; text-align: center; }
     .result-actions { flex-direction: column; }
 }
+
+/* --- DAILY CHECKLIST TRAJECTORY PLAN --- */
+.daily-plan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 0 4px;
+}
+
+.plan-progress-value {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--accent-cyan);
+    text-shadow: 0 0 10px rgba(100, 210, 255, 0.2);
+}
+
+.daily-plan-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.day-plan-card {
+    display: flex;
+    gap: 18px;
+    padding: 24px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform var(--transition-smooth), border-color var(--transition-smooth), background-color var(--transition-smooth);
+    align-items: flex-start;
+}
+
+.day-plan-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.day-plan-card.completed {
+    border-color: rgba(10, 132, 255, 0.25);
+    background: rgba(10, 132, 255, 0.04);
+}
+
+.day-plan-card.completed .day-focus {
+    text-decoration: line-through;
+    color: var(--text-tertiary);
+    transition: color 0.3s;
+}
+
+.day-plan-card.completed .day-action {
+    text-decoration: line-through;
+    color: var(--text-tertiary);
+    transition: color 0.3s;
+}
+
+.day-checkbox {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s, background-color 0.2s;
+    flex-shrink: 0;
+    margin-top: 2px;
+    user-select: none;
+}
+
+.day-checkbox:hover {
+    border-color: var(--accent-cyan);
+}
+
+.day-checkbox.checked {
+    background: var(--accent-blue);
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 10px rgba(10, 132, 255, 0.4);
+}
+
+.day-checkbox.checked::after {
+    content: "✓";
+    color: var(--text-primary);
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.day-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.day-number {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--accent-cyan);
+}
+
+.day-focus {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.day-action {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.day-motivation {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--accent-purple);
+    margin-top: 6px;
+    border-left: 2px solid var(--accent-purple);
+    padding-left: 10px;
+    line-height: 1.4;
+}

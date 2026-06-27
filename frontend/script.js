@@ -173,6 +173,9 @@ async function generateIdentity(event) {
             // Update and display dashboard charts
             updateDashboardMetrics(data);
             
+            // Render 7-day daily action plan
+            renderDailyPlan(data.dailyPlan);
+            
             // Initialize chat interface with context
             initChatSection(data);
             
@@ -302,6 +305,11 @@ function resetForm() {
     document.getElementById("appResult").style.display = "none";
     document.getElementById("chat").style.display = "none";
     
+    // Clear checklist
+    document.getElementById("resDailyPlanGrid").innerHTML = "";
+    document.getElementById("planProgressText").innerText = "0 of 7 Completed (0%)";
+    completedDaysCount = 0;
+    
     // Restore personality selector to Motivational
     const options = document.querySelectorAll(".personality-option");
     options.forEach(opt => {
@@ -330,6 +338,20 @@ function copyResultToClipboard() {
     const warning = document.getElementById("resWarningDesc").innerText;
     const mantra = document.getElementById("resMantra").innerText;
     
+    // Format daily plan details
+    let planText = "";
+    const dayCards = document.querySelectorAll(".day-plan-card");
+    if (dayCards.length > 0) {
+        planText = "\n📅 7-DAY ACTION PLAN:\n";
+        dayCards.forEach(card => {
+            const num = card.querySelector(".day-number").innerText;
+            const focus = card.querySelector(".day-focus").innerText;
+            const action = card.querySelector(".day-action").innerText;
+            const completed = card.classList.contains("completed") ? " [COMPLETED]" : "";
+            planText += `- ${num} - ${focus}: ${action}${completed}\n`;
+        });
+    }
+
     const formattedText = `
 ---
 ✨ FUTURE ME TRANSMISSION ✨
@@ -352,7 +374,7 @@ ${habit}
 
 ⚠️ WARNING:
 ${warning}
-
+${planText}
 🧘 DAILY MANTRA:
 ${mantra}
 
@@ -424,6 +446,82 @@ function animateDashboardCharts() {
         const bar = document.getElementById(`resBar${i}`);
         if (bar) {
             bar.style.height = resBarHeights[i - 1];
+        }
+    }
+}
+
+let completedDaysCount = 0;
+
+function renderDailyPlan(dailyPlanArray) {
+    const grid = document.getElementById("resDailyPlanGrid");
+    const progressText = document.getElementById("planProgressText");
+    grid.innerHTML = "";
+    completedDaysCount = 0;
+    
+    if (!dailyPlanArray || !Array.isArray(dailyPlanArray) || dailyPlanArray.length === 0) {
+        grid.innerHTML = "<p style='color: var(--text-tertiary); font-style: italic;'>No daily plan generated. Update your details and try again.</p>";
+        progressText.innerText = "0 of 7 Completed (0%)";
+        return;
+    }
+    
+    dailyPlanArray.forEach((item, index) => {
+        const card = document.createElement("div");
+        card.className = "day-plan-card";
+        card.id = `dayCard_${index}`;
+        
+        card.innerHTML = `
+            <div class="day-checkbox" id="checkbox_${index}" onclick="toggleDayCompleted(${index})"></div>
+            <div class="day-info">
+                <span class="day-number">${item.day || `Day ${index + 1}`}</span>
+                <span class="day-focus">${item.focus || "Daily Action Focus"}</span>
+                <p class="day-action">${item.action || "Take this action step today."}</p>
+                ${item.motivation ? `<p class="day-motivation">${item.motivation}</p>` : ''}
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+    
+    updatePlanProgress(dailyPlanArray.length);
+}
+
+function toggleDayCompleted(index) {
+    const checkbox = document.getElementById(`checkbox_${index}`);
+    const card = document.getElementById(`dayCard_${index}`);
+    
+    checkbox.classList.toggle("checked");
+    card.classList.toggle("completed");
+    
+    const totalDays = document.querySelectorAll(".day-plan-card").length;
+    const completedDays = document.querySelectorAll(".day-plan-card.completed").length;
+    completedDaysCount = completedDays;
+    
+    updatePlanProgress(totalDays);
+    
+    if (checkbox.classList.contains("checked")) {
+        showToast("Day completed! Keep the momentum.");
+    }
+}
+
+function updatePlanProgress(totalDays) {
+    const progressText = document.getElementById("planProgressText");
+    const percentage = totalDays > 0 ? Math.round((completedDaysCount / totalDays) * 100) : 0;
+    progressText.innerText = `${completedDaysCount} of ${totalDays} Completed (${percentage}%)`;
+    
+    // Dynamically update the timeline alignment dashboard value
+    const alignmentVal = document.getElementById("dbClarity");
+    if (alignmentVal && userProfileData) {
+        // Base alignment score + progress weighting
+        const baseScore = 75;
+        const currentScore = Math.min(100, baseScore + Math.round((completedDaysCount / totalDays) * 25));
+        alignmentVal.innerText = `${currentScore}%`;
+        
+        // Boost clarity bar charts based on progress
+        for (let i = 1; i <= 5; i++) {
+            const bar = document.getElementById(`bar${i}`);
+            if (bar) {
+                const targetHeight = Math.min(100, (currentScore - 20) + (i * 4));
+                bar.style.height = `${targetHeight}%`;
+            }
         }
     }
 }
